@@ -1,0 +1,66 @@
+Exercicio 3 - Respostas
+
+O triangulo tem os vertices P1 (topo, vermelho), P2 (inferior esquerdo, verde) e P3 (inferior direito, azul).
+
+a) Configuracao possivel dos buffers (VBO, VAO)
+
+Uma forma simples de fazer isso e usar um unico VBO com os dados intercalados, ou seja, a posicao e a cor de cada vertice ficam juntas na memoria, uma logo depois da outra, na ordem x, y, z, r, g, b para cada vertice. Ficaria mais ou menos assim:
+
+GLfloat vertices[] = {
+    // posicao (x, y, z)     // cor (r, g, b)
+     0.0f,  0.5f, 0.0f,       1.0f, 0.0f, 0.0f,   // P1 - vermelho
+    -0.5f, -0.5f, 0.0f,       0.0f, 1.0f, 0.0f,   // P2 - verde
+     0.5f, -0.5f, 0.0f,       0.0f, 0.0f, 1.0f,   // P3 - azul
+};
+
+Cada vertice ocupa 6 * sizeof(GLfloat), ou seja, 24 bytes (esse e o stride). Dentro de cada vertice, a posicao comeca no byte 0 e a cor comeca no byte 12, que e 3 * sizeof(GLfloat).
+
+O VAO guarda essa configuracao de como ler o VBO, atraves de dois glVertexAttribPointer, um para cada atributo:
+
+GLuint VBO, VAO;
+glGenVertexArrays(1, &VAO);
+glGenBuffers(1, &VBO);
+
+glBindVertexArray(VAO);
+
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+// atributo 0: posicao (3 floats), stride de 6 floats, offset 0
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (void*)0);
+glEnableVertexAttribArray(0);
+
+// atributo 1: cor (3 floats), stride de 6 floats, offset de 3 floats
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
+glEnableVertexAttribArray(1);
+
+Vale lembrar que essa nao e a unica forma de fazer, so uma possivel configuracao (como o proprio enunciado pede). Nos slides tambem aparece a opcao de usar dois VBOs separados, um so com as posicoes e outro so com as cores, os dois ligados ao mesmo VAO. As duas formas funcionam.
+
+b) Como esses atributos sao identificados no vertex shader
+
+O numero que a gente usa no glVertexAttribPointer(0, ...) e no glVertexAttribPointer(1, ...) e exatamente o mesmo numero que o vertex shader usa no layout (location = N). E esse numero que faz a ligacao entre o buffer, que fica do lado do C++, e a variavel de entrada do shader, que fica do lado do GLSL.
+
+#version 330 core
+layout (location = 0) in vec3 position;  // vem do atributo 0, a posicao
+layout (location = 1) in vec3 color;     // vem do atributo 1, a cor
+
+out vec3 vertexColor;  // vai passar essa cor pro fragment shader, ja interpolada
+
+void main()
+{
+    gl_Position = vec4(position, 1.0);
+    vertexColor = color;
+}
+
+No fragment shader, a cor ja chega interpolada entre os tres vertices, e e por isso que o triangulo aparece com aquele gradiente suave entre o vermelho, o verde e o azul.
+
+#version 330 core
+in vec3 vertexColor;
+out vec4 color;
+
+void main()
+{
+    color = vec4(vertexColor, 1.0);
+}
+
+Essa e a implementacao que esta feita no arquivo src/exercicio3.cpp.

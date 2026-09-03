@@ -1,0 +1,35 @@
+# Ignorar a pasta de build e arquivos temporários do CMake
+/build/
+/CMakeCache.txt
+/CMakeFiles/
+/Makefile
+/cmake_install.cmake
+
+# Ignorar arquivos de saída do compilador (objetos e executáveis)
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.lib
+*.dll
+*.so
+
+# Ignorar dependências baixadas automaticamente pelo CMake
+_build/
+_deps/
+glfw-src/
+glfw-build/
+# OBS: "external/" NAO esta sendo ignorado aqui de proposito -- o
+# external/glad deste projeto foi gerado manualmente e e versionado
+# junto com o codigo (nao e baixado automaticamente pelo CMake), entao
+# ele PRECISA ser commitado para o projeto compilar em outra maquina.
+
+# Ignorar configurações específicas do VSCode
+.vscode/
+CMakeUserPresets.json
+
+# Ignorar logs e arquivos de sistema
+*.log
+.DS_Store
+Thumbs.db
