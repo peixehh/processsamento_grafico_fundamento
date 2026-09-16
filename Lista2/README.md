@@ -1,4 +1,4 @@
-# Lista 2 — Matriz de Projeção Ortográfica e Mapeamento com a Viewport
+ # Lista 2 — Matriz de Projeção Ortográfica e Mapeamento com a Viewport
 
 ## Equipe
 - João Pedro Araújo Rocha
@@ -7,7 +7,7 @@
 
 ## Descrição do Projeto
 
-> Este programa foi desenvolvido como parte da disciplina *Processamento Gráfico: Fundamentos* com o objetivo de aplicar os conceitos de janela do mundo (window), matriz de projeção ortográfica (`glm::ortho`) e mapeamento com a viewport (`glViewport`) em OpenGL moderna (Core Profile) e C++. O projeto explora diferentes configurações da janela do mundo (incluindo coordenadas de pixel com eixo Y invertido), a restrição/repetição do desenho em quadrantes da tela via viewport, e a criação interativa de geometria a partir de cliques do mouse.
+> Este programa foi desenvolvido como parte da disciplina *Processamento Gráfico: Fundamentos* com o objetivo de aplicar os conceitos de janela do mundo (window), matriz de projeção ortográfica e mapeamento com a viewport em OpenGL moderna (Core Profile) e C++. O projeto explora diferentes configurações da janela do mundo (incluindo coordenadas de pixel com eixo Y invertido), a restrição/repetição do desenho em quadrantes da tela via viewport, e a criação interativa de geometria a partir de cliques do mouse.
 
 Cada item da lista foi implementado como um **programa independente** — um
 arquivo `.cpp` com seu próprio `main()`, que já gera diretamente o
