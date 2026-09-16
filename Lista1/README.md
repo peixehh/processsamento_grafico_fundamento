@@ -11,7 +11,7 @@
 
 Cada item da lista foi implementado como um **programa independente** — um
 arquivo `.cpp` com seu próprio `main()`, que já gera diretamente o
-resultado pedido, sem menu nem tecla para trocar de item.
+resultado pedido.
 
 ---
 
