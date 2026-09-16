@@ -1,4 +1,4 @@
-# Processamento Gráfico: Fundamentos 2026/2
+﻿# Processamento Gráfico: Fundamentos 2026/2
 
 Repositório com os projetos desenvolvidos para a Atividade Acadêmica **Processamento Gráfico: Fundamentos**, parte do curso de graduação em **Ciência da Computação da Unisinos**.
 
