@@ -26,7 +26,7 @@ resultado pedido.
 | `src/exercicio5.cpp`    | Exercício 5 — a mesma cena desenhada nos 4 quadrantes da janela.                      |
 | `src/exercicio6.cpp`    | Exercício 6 — triângulos criados a partir de cliques do mouse (3 vértices = 1 triângulo, cor nova a cada um). |
 | `src/GLBase.h`           | Classe/funções utilitárias para criação da janela GLFW/contexto OpenGL/GLAD e criação de VAO/VBO. |
-| `src/Shader.h`            | Classe utilitária para compilação e uso de shaders, incluindo envio de matrizes (`glm::mat4`) via uniform. |
+| `src/Shader.h`            | Classe utilitária para compilação e uso de shaders, incluindo envio de matrizes via uniform. |
 
 ---
 
