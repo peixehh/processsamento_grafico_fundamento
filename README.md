@@ -10,5 +10,6 @@ Repositório com os projetos desenvolvidos para a Atividade Acadêmica **Process
 | ----------------------- | ------------------ | -------------------------------------------- |
 | `Lista 1`       | C++/OpenGL         | Desenvolvimento dos exercícios da Lista 1    |
 | `Lista 2`       | C++/OpenGL         | Desenvolvimento dos exercícios da Lista 2    |
+| `Grau A`       | C++/OpenGL         | Desenvolvimento do trabalho do Grau A    |
 
 ---
