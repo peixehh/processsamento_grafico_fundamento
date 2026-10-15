@@ -1,0 +1,67 @@
+# Terraria :D - configuracao lida na inicializacao
+# formato chave = valor (# inicia comentario)
+
+# janela window.width  = 960
+window.height = 540
+window.title  = Terraria :D
+window.vsync  = 1       # 1 = sincroniza com o monitor (V-Sync), 0 = o Timer limita em 60 FPS
+
+# texto do HUD (FreeType) font.file  = fonts/DejaVuSansMono-Bold.ttf
+font.sizes = 16 32 80   # tamanhos em pixels pequeno, medio e grande
+
+# mundo (em blocos de 32x32) world.width  = 300
+world.height = 100
+world.seed   = 1234
+
+# ciclo dia/noite day.length = 120        # segundos para um dia completo
+day.start  = 0.12       # fase inicial (0.25 = meio-dia, 0.75 = meia-noite)
+
+# jogador player.speed   = 240    # px/s
+player.jump    = 520    # velocidade inicial do pulo (px/s)
+player.gravity = 1500   # px/s^2
+player.reach   = 160    # alcance para minerar/colocar (px)
+player.hearts  = 5
+player.regen   = 12     # segundos sem dano para recuperar 1 coracao
+# spritesheet arquivo, colunas, linhas, quadros por animacao, fps por animacao
+# animacoes (linhas) 0 parado | 1 andando | 2 pulando | 3 minerando
+player.sprite = player.png
+player.cols   = 6
+player.rows   = 4
+player.frames = 4 6 2 4
+player.fps    = 4 12 0 10
+
+player.fall.safe     = 192   # queda (px) sem dano 6 blocos
+player.fall.perheart = 96    # a cada 96 px alem disso, perde mais 1 coracao
+
+# combate sword.damage = 2     # dano da espada (golpe em arco)
+punch.damage = 1     # dano ao bater com a picareta/blocos
+
+# slime (inimigo) slime.sprite = slime.png
+slime.cols   = 4
+slime.rows   = 1
+slime.frames = 4
+slime.fps    = 0
+slime.hp     = 4
+slime.damage = 1
+
+# zumbi (inimigo da noite) zombie.sprite = zombie.png
+zombie.cols   = 4
+zombie.rows   = 1
+zombie.frames = 4
+zombie.fps    = 6
+zombie.hp     = 6
+zombie.damage = 2
+zombie.speed  = 75
+
+# drops (moeda e coracao) linha 0 = moeda, linha 1 = coracao 
+drops.sprite = drops.png
+
+# camadas de parallax (da mais distante para a mais proxima)
+# layer = arquivo, taxa horizontal, taxa vertical, deriva px/s, modo
+# modo sky (ceu), day (escurece a noite), night (so aparece a noite), fixed
+layer = bg_sky.png,        0.00, 0.00,  0.0, sky
+layer = bg_stars.png,      0.02, 0.00,  0.0, night
+layer = bg_clouds.png,     0.10, 0.05,  8.0, day
+layer = bg_mountains.png,  0.20, 0.10,  0.0, day
+layer = bg_hills_far.png,  0.40, 0.20,  0.0, day
+layer = bg_hills_near.png, 0.65, 0.35,  0.0, day
