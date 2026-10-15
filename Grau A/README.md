@@ -10,7 +10,7 @@ cava, coleta recursos, constrói e se defende de slimes e zumbis, com ciclo de d
 
 ## Vídeo de apresentação
 
-Link:
+Link: https://youtu.be/wAAd5dNeOZA
 
 ## O que o jogo tem
 
