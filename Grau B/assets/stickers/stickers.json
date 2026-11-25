@@ -1,0 +1,13 @@
+[
+  {"id": "oculos", "nome": "Óculos pixel (Thug Life)", "arquivo": "oculos.png", "pixel_art": true},
+  {"id": "estrela", "nome": "Estrela pixel", "arquivo": "estrela.png", "pixel_art": true},
+  {"id": "coracao", "nome": "Coração pixel", "arquivo": "coracao.png", "pixel_art": true},
+  {"id": "coroa", "nome": "Coroa", "arquivo": "coroa.png"},
+  {"id": "bigode", "nome": "Bigode", "arquivo": "bigode.png"},
+  {"id": "gato_joia", "nome": "Gato joia (foto)", "arquivo": "gato_joia.png"},
+  {"id": "leopardo", "nome": "Leopardo-das-neves (foto)", "arquivo": "leopardo_neves.png"},
+  {"id": "coracao_pulsante", "nome": "Coração pulsante (animado)", "arquivo": "coracao_pulsante_spritesheet.png",
+   "quadros": 8, "linhas": 1, "fps": 10, "pixel_art": true},
+  {"id": "estrela_saltitante", "nome": "Estrela saltitante (animado)", "arquivo": "estrela_saltitante_spritesheet.png",
+   "quadros": 8, "linhas": 1, "fps": 12, "pixel_art": true}
+]

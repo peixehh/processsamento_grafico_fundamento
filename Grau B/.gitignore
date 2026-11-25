@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# IDEs
+.vscode/
+.idea/
+
+# Imagens salvas pelo programa
+saidas/*
+!saidas/.gitkeep
+
+# Sistema
+Thumbs.db
+.DS_Store
